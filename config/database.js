@@ -1,3 +1,9 @@
+const defaultDB = 'postgres://postgres:postgres@127.0.0.1:5432/snakeapi'
+const dataUrl = process.env.DATABASE_URL || defaultDB
+
+const [, , DB_USER, DB_USER_PWD, DB_HOST, DB_PORT, DB_NAME] = dataUrl.match(/^(postgres):\/\/(.*):(.*)@(.*):(\d+)\/(.*)$/,)
+
+
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
@@ -5,11 +11,11 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        host: env('DATABASE_HOST', '127.0.0.1'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'snakeapi'),
-        username: env('DATABASE_USERNAME', 'postgres'),
-        password: env('DATABASE_PASSWORD', 'postgres'),
+        host: DB_HOST,
+        port: DB_PORT,
+        database: DB_NAME,
+        username: DB_USER,
+        password: DB_USER_PWD,
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {}

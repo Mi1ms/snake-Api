@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/leaderboards",
+      "handler": "leaderboard.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/leaderboards/count",
+      "handler": "leaderboard.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/leaderboards/:id",
+      "handler": "leaderboard.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/leaderboards",
+      "handler": "leaderboard.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/leaderboards/:id",
+      "handler": "leaderboard.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/leaderboards/:id",
+      "handler": "leaderboard.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
