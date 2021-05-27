@@ -5,7 +5,7 @@ const [, , DB_USER, DB_USER_PWD, DB_HOST, DB_PORT, DB_NAME] = dataUrl.match(/^(p
 
 console.log('CHAUSSSSETTTTTTTEEEEEE')
 console.log('TEST=>', process.env.TEST);
-console.log('PROCESS ENV =>', process.env.DATABASE_URL);
+console.log('PROCESS ENV =>', process.env);
 
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
