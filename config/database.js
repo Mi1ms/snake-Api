@@ -4,7 +4,8 @@ const dataUrl = process.env.DATABASE_URL || defaultDB
 const [, , DB_USER, DB_USER_PWD, DB_HOST, DB_PORT, DB_NAME] = dataUrl.match(/^(postgres):\/\/(.*):(.*)@(.*):(\d+)\/(.*)$/,)
 
 console.log('CHAUSSSSETTTTTTTEEEEEE')
-console.log('PROCESS ENV =>', process.env.TEST);
+console.log('TEST=>', process.env.TEST);
+console.log('PROCESS ENV =>', process.env.DATABASE_URL);
 
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
